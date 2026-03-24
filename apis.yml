@@ -1,0 +1,7 @@
+aid: brinker-international
+url: https://raw.githubusercontent.com/api-evangelist/brinker-international/refs/heads/main/apis.yml
+modified: '2026-03-23'
+apis: []
+common:
+  - type: Website
+    url: https://www.brinker-international.com
