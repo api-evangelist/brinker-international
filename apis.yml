@@ -1,7 +1,11 @@
 aid: brinker-international
-url: https://raw.githubusercontent.com/api-evangelist/brinker-international/refs/heads/main/apis.yml
+url: 
+  https://raw.githubusercontent.com/api-evangelist/brinker-international/refs/heads/main/apis.yml
 modified: '2026-03-23'
 apis: []
 common:
   - type: Website
     url: https://www.brinker-international.com
+description: >-
+  Brinker International is a casual dining restaurant company that owns, operates,
+  and franchises Chili's Grill & Bar and Maggiano's Little Italy.
