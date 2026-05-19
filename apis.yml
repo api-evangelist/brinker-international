@@ -25,6 +25,8 @@ description: >-
   management across its digital properties.
 apis: []
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/brinker-international
   - type: Website
     url: https://www.brinker.com
   - type: ChilisWebsite
