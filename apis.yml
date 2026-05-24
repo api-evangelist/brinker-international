@@ -35,6 +35,8 @@ common:
     url: https://www.maggianos.com
   - type: InvestorRelations
     url: https://investors.brinker.com
+  - type: LLMsTxt
+    url: https://brinker.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
