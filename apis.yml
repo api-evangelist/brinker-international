@@ -20,24 +20,40 @@ description: >-
   operates, and franchises Chili's Grill & Bar and Maggiano's Little Italy.
   Headquartered in Dallas, Texas, Brinker operates over 1,600 Chili's locations
   across 29 countries and over 50 Maggiano's locations in the United States.
-  The company leverages digital ordering platforms, loyalty programs, and point-of-sale
-  integrations for restaurant operations. Brinker uses Prismic CMS for content
-  management across its digital properties.
+  The company leverages digital ordering platforms, loyalty programs, mobile
+  apps, in-restaurant kiosks, and point-of-sale integrations for restaurant
+  operations, running a unified open-source e-commerce environment built on
+  Red Hat (RHEL, Satellite, Lightspeed) and using Prismic CMS for digital
+  content management. Brinker operates an SSO-gated partner/franchise API
+  developer portal at developer.brinker.com for onboarding partners; there is
+  no public, self-service developer API, OpenAPI specification, SDK, or open
+  GitHub organization. Consumer-facing surfaces are the Chili's and Maggiano's
+  mobile apps and websites and their loyalty programs.
 apis: []
 common:
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/brinker-international
   - type: Website
     url: https://www.brinker.com
-  - type: ChilisWebsite
+  - type: Website
+    title: Chili's Grill & Bar
     url: https://www.chilis.com
-  - type: MaggianoWebsite
+  - type: Website
+    title: Maggiano's Little Italy
     url: https://www.maggianos.com
-  - type: InvestorRelations
+  - type: DeveloperPortal
+    title: Partner API Developer Portal (SSO-gated)
+    url: https://developer.brinker.com
+  - type: Portal
+    title: Franchise Partner Portal (login)
+    url: https://franchise.brinker.com
+  - type: Partners
+    title: Domestic Franchising
+    url: https://brinker.com/franchise/domestic
+  - type: Resources
+    title: Investor Relations
     url: https://investors.brinker.com
-  - type: LLMsTxt
-    url: https://brinker.com/llms.txt
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/brinker-international
 maintainers:
   - FN: Kin Lane
-    email: info@apievangelist.com
+    email: kin@apievangelist.com
 specificationVersion: '0.19'
