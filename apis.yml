@@ -32,6 +32,8 @@ description: >-
   mobile apps and websites and their loyalty programs.
 apis: []
 common:
+  - type: DomainSecurity
+    url: security/brinker-international-domain-security.yml
   - type: Website
     url: https://www.brinker.com
   - type: Website
