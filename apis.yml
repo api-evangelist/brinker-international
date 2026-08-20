@@ -2,6 +2,14 @@ aid: brinker-international
 url: https://raw.githubusercontent.com/api-evangelist/brinker-international/refs/heads/main/apis.yml
 name: Brinker International
 tags:
+  - Restaurant
+  - Casual Dining
+  - Food Service
+  - Franchise
+  - Chilis
+  - Maggianos
+  - Fortune 1000
+tags_raw:
   - Restaurants
   - Casual Dining
   - Food Service
