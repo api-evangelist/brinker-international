@@ -1,0 +1,20 @@
+generated: '2026-09-04'
+method: searched
+source: https://developer.brinker.com/portals/api/sites/brinker-portal/liveportal/apis
+docs: https://developer.brinker.com/faqs
+plan_count: 0
+plans: []
+note: >-
+  Brinker International publishes no API plans, tiers or pricing of any kind. There is
+  no public pricing page for the developer program: the Apigee developer portal at
+  developer.brinker.com exposes only FAQs, a Sign In link and an APIs menu item, and
+  its anonymous catalog endpoint (/portals/api/sites/brinker-portal/liveportal/apis,
+  HTTP 200) returns apiDocs: [], apiProducts: [] and apiCategoryList: [] — nothing is
+  listed to an unauthenticated visitor. Access is entitlement-based and granted by a
+  human: the portal FAQ states "From backend API Product will be assigned based on your
+  entitlement" after the Brinker API Team approves the account and the app. This is a
+  partner/franchise integration program, not a commercial API product with published
+  rate cards, so a plan count of zero is the accurate reading rather than a gap in our
+  search.
+access_model: partner-entitlement
+self_service: false

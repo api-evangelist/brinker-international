@@ -44,7 +44,7 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/brinker-international.png
 access: 3rd-Party
 created: '2026-03-23'
-modified: '2026-04-21'
+modified: '2026-09-04'
 position: Consuming
 description: >-
   Brinker International is a leading casual dining restaurant company that owns,
@@ -55,11 +55,18 @@ description: >-
   apps, in-restaurant kiosks, and point-of-sale integrations for restaurant
   operations, running a unified open-source e-commerce environment built on
   Red Hat (RHEL, Satellite, Lightspeed) and using Prismic CMS for digital
-  content management. Brinker operates an SSO-gated partner/franchise API
-  developer portal at developer.brinker.com for onboarding partners; there is
-  no public, self-service developer API, OpenAPI specification, SDK, or open
-  GitHub organization. Consumer-facing surfaces are the Chili's and Maggiano's
-  mobile apps and websites and their loyalty programs.
+  content management. Brinker runs a real but entirely partner-facing API program
+  on Google Apigee: an Apigee Edge gateway at api.brinker.com and an Apigee
+  Integrated Developer Portal at developer.brinker.com whose API catalog is
+  approval-gated (accounts are approved by the Brinker API Team and API Products
+  assigned by entitlement). The portal's anonymous catalog endpoint returns an
+  empty apiDocs/apiProducts list; its QA sibling names six API product families —
+  LoyaltyEA, Promos, ITSM ServiceNow, GMS, OrderManagement and POS — but exposes
+  no paths, schemas or base URLs. There is no public, self-service developer API,
+  OpenAPI specification, SDK, MCP server, agent card, or open GitHub organization.
+  Consumer-facing surfaces are the Chili's and Maggiano's mobile apps and websites
+  and their loyalty programs, with online ordering powered by Olo and site content
+  by Prismic.
 apis: []
 common:
   - type: DomainSecurity
@@ -86,7 +93,54 @@ common:
     url: https://investors.brinker.com
   - type: LinkedIn
     url: https://www.linkedin.com/company/brinker-international
+  - type: Authentication
+    title: Authentication + onboarding profile (Apigee key/secret, approval-gated)
+    url: authentication/brinker-international-authentication.yml
+  - type: Plans
+    title: Plans + pricing (none published — partner entitlement only)
+    url: plans/brinker-international-plans-pricing.yml
+  - type: RateLimits
+    title: Rate limits (none published)
+    url: rate-limits/brinker-international-rate-limits.yml
+  - type: LLMsTxt
+    title: llms.txt (generated)
+    url: llms/brinker-international-llms.txt
+  - type: SignUp
+    title: Developer Portal account registration
+    url: https://developer.brinker.com/accounts/create
+  - type: Support
+    title: Developer Portal FAQs
+    url: https://developer.brinker.com/faqs
+  - type: PrivacyPolicy
+    url: https://brinker.com/privacy
+  - type: TermsOfService
+    url: https://brinker.com/terms-and-conditions
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
 specificationVersion: '0.23'
+
+x-enrichment:
+  date: '2026-09-04'
+  status: minimal
+  artifacts_added: 5
+  pass: local-v3
+x-coverage:
+  state: gated
+  reason: partner-login
+  detail: >-
+    Brinker's Apigee developer portal answers HTTP 401 "No authorization header
+    provided" on /portals/api/sites/brinker-portal/apidocs, and its anonymous catalog
+    endpoint returns an empty apiDocs/apiProducts list, so the six API product families
+    its QA site names (LoyaltyEA, Promos, ITSM ServiceNow, GMS, OrderManagement, POS)
+    have no readable contract without a Brinker-API-Team-approved account.
+  evidence:
+    - url: https://developer.brinker.com/portals/api/sites/brinker-portal/apidocs
+      status: 401
+    - url: https://developer.brinker.com/portals/api/sites/brinker-portal/liveportal/apis
+      status: 200
+    - url: https://developerqa.brinker.com/portals/api/sites/brinkerqa-portal/liveportal/apis
+      status: 200
+    - url: https://api.brinker.com/
+      status: 404
+  checked: '2026-09-04'

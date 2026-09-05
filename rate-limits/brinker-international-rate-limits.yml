@@ -1,0 +1,23 @@
+generated: '2026-09-04'
+method: searched
+source: https://developer.brinker.com/faqs
+limit_count: 0
+rate_limits: []
+headers: []
+note: >-
+  No rate limits are documented anywhere on a Brinker public surface. The developer
+  portal's only anonymously readable page is the registration FAQ, which covers account
+  creation, app creation and key activation and says nothing about quotas, spike
+  arrests or throttling. Brinker runs Google Apigee Edge at api.brinker.com, whose
+  Quota and SpikeArrest policies would normally return HTTP 429 with a policy-specific
+  fault body, but no anonymously routable proxy exists to observe one — the gateway
+  answers unknown paths with
+  {"fault":{"faultstring":"Unable to identify proxy for host: secure and url: /"}} and
+  errorcode messaging.adaptors.http.flow.ApplicationNotFound. Any published limits live
+  inside the gated API reference at developer.brinker.com; an honest zero is recorded
+  here rather than an inferred number.
+observed:
+  - url: https://api.brinker.com/
+    http_status: 404
+    rate_limit_headers: none
+    note: Apigee ApplicationNotFound fault; no RateLimit-*, X-RateLimit-* or Retry-After header returned.

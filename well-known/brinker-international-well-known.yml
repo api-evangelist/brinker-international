@@ -1,0 +1,161 @@
+generated: '2026-09-04'
+method: probed
+source: live HTTP probes of every host in apis.yml (registrable domains, brand sites, the Apigee developer portal and the Apigee API gateway host)
+note: >-
+  No /.well-known/ document is served on any Brinker host. www.brinker.com and
+  brinker.com are a client-rendered React/Prismic single-page app that answers HTTP
+  200 with the same 1,139-byte shell for every path, including every /.well-known/
+  path — that is an SPA catch-all, NOT a served document, and it is recorded here as
+  a miss. developer.brinker.com (Google Apigee Integrated Developer Portal) behaves
+  the same way with a 2,138-byte Angular shell. chilis.com / maggianos.com and
+  api.brinker.com return honest 404s. No WellKnown or SecurityTxt pointer is emitted
+  because nothing real was served.
+hosts:
+  - host: www.brinker.com
+    note: React SPA (Prismic-backed) — 200 with a 1,139-byte HTML shell on every path; treated as a miss.
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        file: null
+        result: spa-shell-not-a-document
+      - path: /.well-known/openid-configuration
+        status: 200
+        file: null
+        result: spa-shell-not-a-document
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: null
+        result: spa-shell-not-a-document
+      - path: /.well-known/api-catalog
+        status: 200
+        file: null
+        result: spa-shell-not-a-document
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        file: null
+        result: spa-shell-not-a-document
+  - host: brinker.com
+    note: Same SPA shell as www.
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        file: null
+        result: spa-shell-not-a-document
+      - path: /.well-known/openid-configuration
+        status: 200
+        file: null
+        result: spa-shell-not-a-document
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: null
+        result: spa-shell-not-a-document
+      - path: /.well-known/api-catalog
+        status: 200
+        file: null
+        result: spa-shell-not-a-document
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        file: null
+        result: spa-shell-not-a-document
+  - host: developer.brinker.com
+    note: Google Apigee Integrated Developer Portal (istio-envoy) — Angular shell answers 200 on every path.
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        file: null
+        result: spa-shell-not-a-document
+      - path: /.well-known/openid-configuration
+        status: 200
+        file: null
+        result: spa-shell-not-a-document
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: null
+        result: spa-shell-not-a-document
+      - path: /.well-known/api-catalog
+        status: 200
+        file: null
+        result: spa-shell-not-a-document
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        file: null
+        result: spa-shell-not-a-document
+  - host: api.brinker.com
+    note: >-
+      Live Apigee Edge gateway (CNAME brinker-prod.apigee.net). Returns a JSON fault
+      "Unable to identify proxy for host: secure and url: /" with errorcode
+      messaging.adaptors.http.flow.ApplicationNotFound — the gateway is real and
+      running, but no anonymously routable proxy is published at these paths.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+  - host: www.chilis.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+  - host: www.maggianos.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+  - host: orders.maggianos.com
+    note: Olo-operated ordering host (page source loads Olo JS) — vendor surface, not a Brinker-authored API.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+agent_card:
+  found: false
+  note: >-
+    /.well-known/agent-card.json and the legacy /.well-known/agent.json were probed on
+    every host above. Every hit was either an honest 404 (chilis.com, maggianos.com,
+    orders.maggianos.com, api.brinker.com) or the SPA catch-all shell (brinker.com,
+    www.brinker.com, developer.brinker.com) whose body is HTML, not an AgentCard
+    object. No a2a/ artifact is written and no AgentCard pointer is emitted.

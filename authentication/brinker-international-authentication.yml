@@ -1,0 +1,69 @@
+generated: '2026-09-04'
+method: searched
+source: https://developer.brinker.com/portals/api/sites/brinker-portal/liveportal/page/faqs
+docs: https://developer.brinker.com/faqs
+note: >-
+  Brinker publishes no OpenAPI, so this profile is read from the provider's own
+  developer-portal FAQ page (fetched anonymously through the portal's public page API
+  at /portals/api/sites/brinker-portal/liveportal/page/faqs, HTTP 200). Brinker runs a
+  Google Apigee Edge gateway at api.brinker.com and a Google Apigee Integrated
+  Developer Portal at developer.brinker.com. Credentials are Apigee developer-app
+  consumer key + secret, issued only after a human at the "Brinker API Team" approves
+  both the account and the app. No OAuth authorization server, no OIDC discovery
+  document and no scope reference is published anonymously on any Brinker host.
+platform: Google Apigee Edge
+gateway_host: api.brinker.com
+portal_host: developer.brinker.com
+security_schemes:
+  - id: apigee-app-key
+    type: apiKey
+    name: API Key (Apigee developer-app consumer key)
+    location: unknown
+    description: >-
+      The FAQ states that after a developer app is created and Brinker activates the
+      credentials, "you can see App details, API Keys and secrets" — the standard Apigee
+      consumer key / consumer secret pair. The header or query parameter the key is
+      presented in is not documented anonymously; it is inside the gated API reference.
+    evidence: https://developer.brinker.com/faqs
+    verified: false
+    note: Scheme inferred from the provider's own FAQ prose plus the Apigee platform, not from a published contract.
+onboarding:
+  self_service: false
+  steps:
+    - Create an account at https://developer.brinker.com/accounts/create (a distribution list or shared mailbox is recommended for organizations).
+    - Receive a welcome email stating the account is created PENDING APPROVAL.
+    - Wait for the Brinker API Team to approve the account, then reset the password via the emailed link.
+    - Sign in, create a developer app under Apps, and request Default Product access.
+    - 'API Product is assigned from the backend based on your entitlement (portal FAQ wording) — notify the Brinker API Team so they activate the credentials.'
+    - After approval, App details, API keys and secrets become visible.
+  approval_required: true
+  approver: Brinker API Team
+  entitlement_based: true
+  source: https://developer.brinker.com/faqs
+oauth:
+  present: false
+  note: >-
+    No /.well-known/oauth-authorization-server, /.well-known/openid-configuration or
+    /.well-known/oauth-protected-resource is served on any Brinker host (see
+    well-known/brinker-international-well-known.yml). scopes/ is therefore not written —
+    there is no OAuth scope surface to derive or search.
+mtls:
+  present: false
+observed_api_product_categories:
+  note: >-
+    The portal's anonymous catalog endpoint /portals/api/sites/<site>/liveportal/apis
+    returns HTTP 200. On the production site (brinker-portal) it returns
+    apiDocs: [], apiProducts: [], apiCategoryList: [] — nothing at all is published to
+    anonymous visitors. On the QA site (brinkerqa-portal) the same endpoint returns
+    empty apiDocs/apiProducts but a populated apiCategoryList naming six API product
+    families. Those are CATEGORY NAMES published by Brinker's own portal, not contracts:
+    no path, operation, schema or base URL is exposed anonymously.
+  source: https://developerqa.brinker.com/portals/api/sites/brinkerqa-portal/liveportal/apis
+  http_status: 200
+  categories:
+    - LoyaltyEA
+    - Promos
+    - ITSM ServiceNow
+    - GMS
+    - OrderManagement
+    - POS
