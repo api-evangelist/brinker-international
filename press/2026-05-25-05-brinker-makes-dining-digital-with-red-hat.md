@@ -1,7 +1,9 @@
 ---
 title: Brinker makes dining digital with Red Hat
 url: https://www.redhat.com/en/success-stories/brinker
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Brinker International" press release artificial intelligence'
 position: 5
 source: serpapi-google
