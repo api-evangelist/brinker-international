@@ -1,4 +1,4 @@
-# Brinker International (brinker-international)
+# Brinker International
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,45 +64,96 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Brinker International is a leading casual dining restaurant company that owns, operates, and franchises Chili's Grill & Bar and Maggiano's Little Italy. Headquartered in Dallas, Texas, Brinker operates over 1,600 Chili's locations across 29 countries and over 50 Maggiano's locations in the United States. The company leverages digital ordering platforms, loyalty programs, mobile apps, in-restaurant kiosks, and point-of-sale integrations for restaurant operations, running a unified open-source e-commerce environment built on Red Hat (RHEL, Satellite, Lightspeed) and using Prismic CMS for digital content management. Brinker operates an SSO-gated partner/franchise API developer portal at developer.brinker.com for onboarding partners; there is no public, self-service developer API, OpenAPI specification, SDK, or open GitHub organization. Consumer-facing surfaces are the Chili's and Maggiano's mobile apps and websites and their loyalty programs.
+Brinker International is a leading casual dining restaurant company that owns, operates, and franchises Chili's Grill & Bar and Maggiano's Little Italy. Headquartered in Dallas, Texas, Brinker operates over 1,600 Chili's locations across 29 countries and over 50 Maggiano's locations in the United States. The company leverages digital ordering platforms, loyalty programs, mobile apps, in-restaurant kiosks, and point-of-sale integrations for restaurant operations, running a unified open-source e-commerce environment built on Red Hat (RHEL, Satellite, Lightspeed) and using Prismic CMS for digital content management. Brinker runs a real but entirely partner-facing API program on Google Apigee: an Apigee Edge gateway at api.brinker.com and an Apigee Integrated Developer Portal at developer.brinker.com whose API catalog is approval-gated (accounts are approved by the Brinker API Team and API Products assigned by entitlement). The portal's anonymous catalog endpoint returns an empty apiDocs/apiProducts list; its QA sibling names six API product families — LoyaltyEA, Promos, ITSM ServiceNow, GMS, OrderManagement and POS — but exposes no paths, schemas or base URLs. There is no public, self-service developer API, OpenAPI specification, SDK, MCP server, agent card, or open GitHub organization. Consumer-facing surfaces are the Chili's and Maggiano's mobile apps and websites and their loyalty programs, with online ordering powered by Olo and site content by Prismic.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/brinker-international/refs/heads/main/apis.yml)
+**Areas:** Restaurant · Casual Dining · Food Service · Franchise · Chilis · Maggianos · Fortune 1000
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Brinker International on APIs.io
 
-## Tags:
+Everything profiled for Brinker International is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/brinker-international/](https://apis.io/providers/brinker-international/)** — or go straight to one of the APIs or properties below.
 
- - Restaurants, Casual Dining, Food Service, Franchise, Chilis, Maggianos
+### Published properties
 
-## Timestamps
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- **Created:** 2026-03-23
-- **Modified:** 2026-04-21
+#### Security (2)
 
-## API Availability
+Authentication, trust centre, and vulnerability disclosure.
 
-Brinker International does **not** publish a public, self-service developer API. Profiling confirmed:
+- [Brinker International Authentication](https://apis.io/security/brinker-international/brinker-international-authentication/)
+- [Brinker International Domain Security](https://apis.io/security/brinker-international/brinker-international-domain-security/)
 
-- **Partner/franchise developer portal** at [developer.brinker.com](https://developer.brinker.com) (plus a QA instance at developerqa.brinker.com) — fully SSO-gated. No public API documentation, OpenAPI/Swagger specification, or open endpoints are accessible without partner credentials.
-- **No official public GitHub organization** with repositories (no SDKs, code samples, or specs published).
-- **No MCP servers or Claude Code skills** published by the company.
-- **No Kubernetes CRDs.**
+#### Plans and pricing (1)
 
-As a result, this repo intentionally contains no machine-readable API artifacts (no `openapi/`, `json-schema/`, `capabilities/`, etc.). It serves as a profile of the company's digital and partner-integration surface.
+Published plans, tiers and prices.
 
-## Common Properties
+- [Brinker International Plans Pricing](https://apis.io/plans/brinker-international/brinker-international-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Brinker International Rate Limits](https://apis.io/rate-limits/brinker-international/brinker-international-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.brinker.com)
-- [Website — Chili's Grill & Bar](https://www.chilis.com)
-- [Website — Maggiano's Little Italy](https://www.maggianos.com)
-- [Partner API Developer Portal (SSO-gated)](https://developer.brinker.com)
-- [Franchise Partner Portal (login)](https://franchise.brinker.com)
-- [Partners — Domestic Franchising](https://brinker.com/franchise/domestic)
-- [Investor Relations](https://investors.brinker.com)
-- [LinkedIn](https://www.linkedin.com/company/brinker-international)
+- [Sign up](https://developer.brinker.com/accounts/create)
+- [Support](https://developer.brinker.com/faqs)
+- [Terms of service](https://brinker.com/terms-and-conditions)
+- [Privacy policy](https://brinker.com/privacy)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
+**Kin Score 12.9** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-**Email:** kin@apievangelist.com
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 26.2 |
+| Access clarity | 13.2 |
+
+**Agent readiness 5.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/brinker-international/](https://apis.io/providers/brinker-international/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Brinker International: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/brinker-international/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
