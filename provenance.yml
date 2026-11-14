@@ -5,13 +5,19 @@ artifacts:
   authentication/brinker-international-authentication.yml:
     method: searched
     evidence: declared in the artifact
+  data-license/brinker-international-data-license.yml:
+    method: harvested
+    evidence: declared in the artifact
+  eligibility/brinker-international-eligibility.yml:
+    method: harvested
+    evidence: declared in the artifact
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-11-02T082323.yml:
+  kin/checks-2026-11-06T143934.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -77,6 +83,9 @@ artifacts:
   kin/score-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-11-06T143934.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
   llms/brinker-international-llms.txt:
     method: generated
     evidence: declared in the artifact
@@ -98,6 +107,9 @@ artifacts:
   press/2026-05-25-05-brinker-makes-dining-digital-with-red-hat.md:
     method: unknown
     evidence: no authorship recorded
+  privacy/brinker-international-privacy-policy.yml:
+    method: harvested
+    evidence: declared in the artifact
   rate-limits/brinker-international-rate-limits.yml:
     method: searched
     evidence: declared in the artifact
@@ -119,6 +131,9 @@ artifacts:
   security/brinker-international-domain-security.yml:
     method: unknown
     evidence: no authorship recorded
+  terms/brinker-international-terms-of-service.yml:
+    method: harvested
+    evidence: declared in the artifact
   well-known/brinker-international-well-known.yml:
     method: unknown
     evidence: no authorship recorded
